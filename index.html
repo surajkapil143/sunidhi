@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SunidhiMakeup</title>
+    <title>Sunidhi Makeover </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Global Styles */
         * {
@@ -37,7 +38,7 @@
         /* Header Styles */
         header {
             background-color: rgba(255, 235, 243, 0.95);
-            padding: 5;
+            padding: 15px 0;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -57,9 +58,9 @@
         }
         
         .logo img {
-            height: 60px;
+            height: 80px;
             margin-right: 10px;
-            width:200px;
+            width:300px;
             
         }
         
@@ -87,9 +88,10 @@
         
         .mobile-menu {
             display: none;
-            font-size: 25px;
+            font-size: 24px;
             cursor: pointer;
-        }      
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -263,7 +265,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
         
         .gallery-item:hover img {
@@ -296,8 +298,8 @@
         /* Courses Section */
         .courses-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
         
         .course {
@@ -710,10 +712,8 @@
             }
             
             .logo {
-                margin-bottom: 10px;
-                
-                height:100%;
-                width:100%;
+                margin-bottom: 15px;
+                justify-content: center;
             }
             
             nav ul {
@@ -750,9 +750,7 @@
                 font-size: 28px;
             }
         }
-        
- /* Updated Mobile Menu Styles */
-                /* Updated Mobile Menu Styles */
+
         @media (max-width: 576px) {
             .mobile-menu {
                 display: block;
@@ -765,22 +763,27 @@
                 padding: 10px;
                 border-radius: 50%;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                font-size: 24px;
+                cursor: pointer;
             }
 
             nav {
-                display: block;
                 position: fixed;
                 left: 0;
                 top: 0;
-                width: 50%;
+                width: 40%;
                 height: 100vh;
                 background: rgba(255, 235, 243, 0.98);
                 backdrop-filter: blur(10px);
-                transition: transform 0.3s ease;
                 transform: translateX(-100%);
+                display: flex;
+                flex-direction:column;
+                justify-content:first baseline;
+                align-items: center;
+                transition: transform 0.3s ease;
                 z-index: 1001;
+                padding-top: 80px;
                 overflow-y: auto;
-                box-shadow: 5px 0 15px rgba(0,0,0,0.1);
             }
 
             nav.active {
@@ -788,36 +791,39 @@
             }
 
             nav ul {
+                display: flex;
                 flex-direction: column;
-                padding: 70px 20px 20px;
-                margin-top: 0;
+                padding: 0 20px;
             }
 
             nav ul li {
                 margin: 10px 0;
+                width: 100%;
             }
 
             nav ul li a {
                 display: block;
                 padding: 12px 20px;
                 border-radius: 8px;
+                transition: all 0.3s ease;
+                text-align: left;
+                width: 100%;
             }
 
-            /* Close Button */
-            .close-menu {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 24px;
-                color: #d33f8d;
-                cursor: pointer;
-                display: none;
+            nav ul li a:hover, nav ul li a.active {
+                background-color: #d33f8d;
+                color: white;
             }
 
-            nav.active .close-menu {
-                display: block;
+            .bx-menu, .bx-x {
+                transition: transform 0.3s ease;
+            }
+
+            .bx-x {
+                transform: rotate(180deg);
             }
         }
+        
         nav .close-menu{
             display:none;
         }
@@ -828,23 +834,23 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-            <img src="logo.jpeg" alt="Sunidhi Makeover Logo">
+            <img src="new%20logo.PNG" alt="Sunidhi Makeover Logo">
    
             </div>
             <div class="mobile-menu">
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <nav>
-                <i class="fas fa-times close-menu"></i>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <i class='bx bx-menu menu-toggle'></i>
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>   
         </div>
     </header>
 
@@ -854,7 +860,7 @@
             <p>Sunidhi Makeover & Academy provides professional training in makeup artistry, hair styling, and beauty techniques to launch your career in the glamour industry.</p>
             <div class="hero-buttons">
                 <a href="#courses" class="cta-button">Explore Courses</a>
-                <a href="https://wa.me/916205683994" class="cta-button outline">Book Consultation</a>
+                <a href="#contact" class="cta-button outline">Book Consultation</a>
             </div>
         </div>
     </section>
@@ -866,7 +872,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMrBb3VykneCURcGtL7-LVlGQ1rdjvUnxAcj5lF=s1360-w1360-h1020" alt="Sunidhi Makeover & Academy">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sunidhi Makeover & Academy">
                 </div>
                 <div class="about-text">
                     <h3>Your Journey to Professional Beauty Expertise</h3>
@@ -952,49 +958,49 @@
             
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipPCrDQcDpLcfYBRy5XWkcJ4StRet_M6R-J0G27Y=s1360-w1360-h1020" alt="Bridal Makeup">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bridal Makeup">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipPBlghiTfWuRb75ay5aSVofi5E82R69PSW8hz73=s1360-w1360-h1020" alt="Bridal Makeup">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bridal Makeup">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipNWtPRZ-TEadLmxm4XXUwHChEF1zLeatuht51DU=s1360-w1360-h1020" alt="Bridal Makeup">
+                    <img src="https://c8.alamy.com/comp/EF4F92/young-woman-facial-peeling-mask-applying-in-beauty-parlour-EF4F92.jpg" alt="Bridal Makeup">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipNJOuu-a9XYSAa7z-Hz9SEqkYhvvrn9tjSrh9lr=s1360-w1360-h1020" alt="Party Makeup">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Party Makeup">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMvjBO3w2LkTnYJq0s_fqBdzwZLNo7x-tlQRQ16=s1360-w1360-h1020" alt="Fashion Makeup">
+                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fashion Makeup">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipPf6rZdlXjbobyIVxKWfzLL4OjB1NOoX4PlfoUB=s1360-w1360-h1020" alt="Hair Styling">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hair Styling">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipPkWmLgnOBNRKLl0ONk6B28GtId2YiF-olKOnN1=s1360-w1360-h1020" alt="Makeup Class">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Makeup Class">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMrBb3VykneCURcGtL7-LVlGQ1rdjvUnxAcj5lF=s1360-w1360-h1020" alt="Fashion Shoot">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fashion Shoot">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -1018,16 +1024,16 @@
                         <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Professional Makeup Course">
                     </div>
                     <div class="course-content">
-                        <h3>Basic Beautician Course</h3>
+                        <h3>Professional Makeup Artist Course</h3>
                         <div class="course-details">
                             <div class="course-detail">
-                                <i class="far fa-clock"></i> Duration: 3 MONTHS
+                                <i class="far fa-clock"></i> Duration: 4 Weeks
                             </div>
                             <div class="course-detail">
-                                <i class="far fa-calendar-alt"></i> 35 Sessions
+                                <i class="far fa-calendar-alt"></i> 20 Sessions
                             </div>
                             <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹5,000
+                                <i class="fas fa-rupee-sign"></i> Fee: ₹1,80,000
                             </div>
                             <div class="course-detail">
                                 <i class="fas fa-user-graduate"></i> Certification Included
@@ -1036,17 +1042,14 @@
                         <div class="course-highlights">
                             <h4>Course Highlights:</h4>
                             <ul>
-                                <li>Skin & Beauty Care</li>
-                                <li>Hair & Scalp Care</li>
-                                <li>Tools & Equipment Use</li>
-                                <li>Hand & Foot Care</li>
-                                <li>Makeup & Styling</li>
-                                <li>Makeup & Styling</li>
-                                <li>Makeup & Styling</li>
+                                <li>Bridal makeup techniques</li>
+                                <li>Advanced skin preparation</li>
+                                <li>Color correction & contouring</li>
+                                <li>Eye makeup mastery</li>
+                                <li>Professional photoshoot</li>
                             </ul>
                         </div>
-                        <a href="https://#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
+                        <a href="#contact" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
                 
@@ -1055,16 +1058,16 @@
                         <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hair Styling Course">
                     </div>
                     <div class="course-content">
-                        <h3>Basic To Advance Bridal Makeup Course</h3>
+                        <h3>Professional Hair Styling Course</h3>
                         <div class="course-details">
                             <div class="course-detail">
-                                <i class="far fa-clock"></i> Duration: 15-20 Day
+                                <i class="far fa-clock"></i> Duration: 2 Weeks
                             </div>
                             <div class="course-detail">
-                                <i class="far fa-calendar-alt"></i> 16 Sessions
+                                <i class="far fa-calendar-alt"></i> 10 Sessions
                             </div>
                             <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹10,000
+                                <i class="fas fa-rupee-sign"></i> Fee: ₹75,000
                             </div>
                             <div class="course-detail">
                                 <i class="fas fa-user-graduate"></i> Certification Included
@@ -1073,136 +1076,14 @@
                         <div class="course-highlights">
                             <h4>Course Highlights:</h4>
                             <ul>
-                                <li>Saree Draping</li>
-                                <li>Colour Theory</li>
-                                <li>Product Knowledge</li>
-                                <li>Kolka Art</li>
-                                <li>Eye & Nude Makeup</li>
-                                <li>Party & Bridal Looks</li>
-                                <li>HD & Water-Restistant Makeup</li>
-                                <li>Advanced Bridal Hairstyles</li>
-                                <li>Client Consultation Skills</li>
+                                <li>Bridal hairstyling</li>
+                                <li>Heat styling techniques</li>
+                                <li>Updos & braiding</li>
+                                <li>Hair extensions</li>
+                                <li>Professional tools training</li>
                             </ul>
                         </div>
-                        <a href="#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
-                    </div>
-                </div>
-
-                <div class="course">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hair Styling Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Basic To Advance Bridal Makeup Course</h3>
-                        <div class="course-details">
-                            <div class="course-detail">
-                                <i class="far fa-clock"></i> Duration: 15-20 Day
-                            </div>
-                            <div class="course-detail">
-                                <i class="far fa-calendar-alt"></i> 16 Sessions
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹10,000
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-user-graduate"></i> Certification Included
-                            </div>
-                        </div>
-                        <div class="course-highlights">
-                            <h4>Course Highlights:</h4>
-                            <ul>
-                                <li>Saree Draping</li>
-                                <li>Colour Theory</li>
-                                <li>Product Knowledge</li>
-                                <li>Kolka Art</li>
-                                <li>Eye & Nude Makeup</li>
-                                <li>Party & Bridal Looks</li>
-                                <li>HD & Water-Restistant Makeup</li>
-                                <li>Advanced Bridal Hairstyles</li>
-                                <li>Client Consultation Skills</li>
-                            </ul>
-                        </div>
-                        <a href="#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
-                    </div>
-                </div>
-
-                <div class="course">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hair Styling Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Basic To Advance Bridal Makeup Course</h3>
-                        <div class="course-details">
-                            <div class="course-detail">
-                                <i class="far fa-clock"></i> Duration: 15-20 Day
-                            </div>
-                            <div class="course-detail">
-                                <i class="far fa-calendar-alt"></i> 16 Sessions
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹10,000
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-user-graduate"></i> Certification Included
-                            </div>
-                        </div>
-                        <div class="course-highlights">
-                            <h4>Course Highlights:</h4>
-                            <ul>
-                                <li>Saree Draping</li>
-                                <li>Colour Theory</li>
-                                <li>Product Knowledge</li>
-                                <li>Kolka Art</li>
-                                <li>Eye & Nude Makeup</li>
-                                <li>Party & Bridal Looks</li>
-                                <li>HD & Water-Restistant Makeup</li>
-                                <li>Advanced Bridal Hairstyles</li>
-                                <li>Client Consultation Skills</li>
-                            </ul>
-                        </div>
-                        <a href="#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
-                    </div>
-                </div>
-
-                <div class="course">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hair Styling Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Basic To Advance Bridal Makeup Course</h3>
-                        <div class="course-details">
-                            <div class="course-detail">
-                                <i class="far fa-clock"></i> Duration: 15-20 Day
-                            </div>
-                            <div class="course-detail">
-                                <i class="far fa-calendar-alt"></i> 16 Sessions
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹10,000
-                            </div>
-                            <div class="course-detail">
-                                <i class="fas fa-user-graduate"></i> Certification Included
-                            </div>
-                        </div>
-                        <div class="course-highlights">
-                            <h4>Course Highlights:</h4>
-                            <ul>
-                                <li>Saree Draping</li>
-                                <li>Colour Theory</li>
-                                <li>Product Knowledge</li>
-                                <li>Kolka Art</li>
-                                <li>Eye & Nude Makeup</li>
-                                <li>Party & Bridal Looks</li>
-                                <li>HD & Water-Restistant Makeup</li>
-                                <li>Advanced Bridal Hairstyles</li>
-                                <li>Client Consultation Skills</li>
-                            </ul>
-                        </div>
-                        <a href="#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
+                        <a href="#contact" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
                 
@@ -1220,7 +1101,7 @@
                                 <i class="far fa-calendar-alt"></i> 30 Sessions
                             </div>
                             <div class="course-detail">
-                                <i class="fas fa-rupee-sign"></i> Fee: ₹4,999
+                                <i class="fas fa-rupee-sign"></i> Fee: ₹2,50,000
                             </div>
                             <div class="course-detail">
                                 <i class="fas fa-user-graduate"></i> Certification Included
@@ -1236,8 +1117,7 @@
                                 <li>Client handling & marketing</li>
                             </ul>
                         </div>
-                        <a href="#course" class="cta-button" style="width: 100%; margin-top: 15px;">Course Details</a>
-                        <a href="https://wa.me/916205683994" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
+                        <a href="#contact" class="cta-button" style="width: 100%; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
             </div>
@@ -1256,7 +1136,7 @@
             <div class="testimonial-slider">
                 <div class="testimonial">
                     <div class="testimonial-avatar">
-                        <img src="#" alt="Priya Sharma">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Sharma">
                     </div>
                     <p class="testimonial-text">"The professional makeup course transformed my skills completely. Sunidhi ma'am's attention to detail and hands-on teaching approach gave me the confidence to start my own bridal makeup business just 3 months after completing the course."</p>
                     <p class="testimonial-author">- Priya Sharma, Professional Makeup Artist</p>
@@ -1264,7 +1144,7 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-avatar">
-                        <img src="#" alt="Anjali Patel">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anjali Patel">
                     </div>
                     <p class="testimonial-text">"I came with zero experience in beauty industry. The academy not only taught me advanced techniques but also helped me get my first clients through their placement program. The small batch size ensured I got personal attention."</p>
                     <p class="testimonial-author">- Anjali Patel, Salon Owner</p>
@@ -1272,7 +1152,7 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-avatar">
-                        <img src="#" alt="Riya Gupta">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Riya Gupta">
                     </div>
                     <p class="testimonial-text">"Learning from Sunidhi ma'am who has actual experience with hundreds of brides made all the difference. The course covered real-world challenges we face with clients that most academies don't teach. Worth every rupee!"</p>
                     <p class="testimonial-author">- Riya Gupta, Freelance Makeup Artist</p>
@@ -1301,7 +1181,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Address</h4>
-                                <p> Taldanga housing colony chapra dangal, opposite Akshat shiv mandir oria dhora, Chirkunda, Dhanbad, Jharkhand 828202</p>
+                                <p>123 Beauty Street, Chirkunda<br>Dhanbad, Jharkhand 828202</p>
                             </div>
                         </div>
                         
@@ -1321,7 +1201,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <p><a href="mailto:info.sunidhimakeover@gmail.com">info.sunidhimakeover@gmail.com</a></p>
+                                <p><a href="mailto:info@sunidhimakeover.com">info@sunidhimakeover.com</a></p>
                             </div>
                         </div>
                         
@@ -1339,7 +1219,7 @@
                     <h3 style="margin-top: 30px;">Follow Us</h3>
                     <div class="social-links">
                         <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/urs.prettiest_girl/?hl=en" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/916205683994" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
@@ -1392,10 +1272,10 @@
                     <h3>About Us</h3>
                     <p>Sunidhi Makeover & Academy is Jharkhand's premier beauty training institute, offering professional courses in makeup, hair styling, and beauty therapy.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/urs.prettiest_girl"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/urs.prettiest_girl/?hl=en"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/916205683994"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.youtube.com/urs.prettiest_girl"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -1403,7 +1283,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="https://github.com/surajkapil143/sunidhi.wiki.git">About Us</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
@@ -1425,9 +1305,9 @@
                 
                 <div class="footer-col">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Chirkunda, Dhanbad, Jharkhand 828202</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Chirkunda, Dhanbad, Jharkhand 828202</p>
                     <p><i class="fas fa-phone-alt"></i> +91 6205683994</p>
-                    <p><i class="fas fa-envelope"></i> info.sunidhimakeover@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i> info@sunidhimakeover.com</p>
                 </div>
             </div>
             
@@ -1442,38 +1322,36 @@
     </div>
 
     <script>
-        // Updated Mobile Menu Functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu');
-        const closeMenuBtn = document.querySelector('.close-menu');
-        const nav = document.querySelector('nav');
-        
-        // Toggle menu
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.add('active');
-        });
-        
-        // Close menu
-        closeMenuBtn.addEventListener('click', () => {
-            nav.classList.remove('active');
-        });
-        mobileMenubtn.addEventListener('click', () => {
-            nav.classList.remove('active');
-        }
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                nav.classList.remove('active');
-            }
-        });
+// Get the elements
+        document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('nav');
 
-        // Close menu after clicking a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
+    // Toggle menu and icon
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('bx-menu');
+        this.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && e.target !== menuToggle) {
+            menuToggle.classList.add('bx-menu');
+            menuToggle.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.add('bx-menu');
+            menuToggle.classList.remove('bx-x');
+            navbar.classList.remove('active');
         });
-        
-        
+    });
+});
         // Back to Top Button
         const backToTopBtn = document.querySelector('.back-to-top');
         
