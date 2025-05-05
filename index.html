@@ -6,7 +6,176 @@
     <title>Sunidhi Makeover </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
+    <style> 
+         :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+            --text-dark: #2c3e50;
+            --social-hover: #1abc9c;
+            --whatsapp-color: #25D366;
+            --header-gradient: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-dark);
+        }
+
+        /* Premium Header Styles */
+        .top-header {
+            background: var(--header-gradient);
+            color: var(--text-light);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .date-time-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .date-container, .time-container {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .time-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .time-segment {
+            display: inline-block;
+            min-width: 22px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .time-separator {
+            margin: 0 2px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: var(--social-hover);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon:hover {
+            background: var(--whatsapp-color) !important;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            .header-info {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .date-time-container {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .social-icons {
+                justify-content: center;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .top-header {
+            animation: fadeIn 0.6s ease-out forwards;
+        } 
+          </style>
+    
         /* Global Styles */
         * {
             margin: 0;
@@ -849,26 +1018,29 @@
  </style>
 </head>
 <body>
-    <!-- Top Header with Date, Time and Social Icons -->
-    <div class="top-header">
-        <div class="header-left">
-            <div class="date-container" id="currentDate">
-                <!-- Date will be inserted by JavaScript -->
-            </div>
-            <div class="time-container">
-                <span id="hours">00</span>:
-                <span id="minutes">00</span>:
-                <span id="seconds">00</span>
+    <!-- Premium Top Header -->
+    <header class="top-header">
+        <div class="header-info">
+            <div class="date-time-container">
+                <div class="date-container" id="currentDate">
+                    <!-- Date inserted by JavaScript -->
+                </div>
+                <div class="time-container">
+                    <span id="hours" class="time-segment">00</span>
+                    <span class="time-separator">:</span>
+                    <span id="minutes" class="time-segment">00</span>
+                    <span class="time-separator">:</span>
+                    <span id="seconds" class="time-segment">00</span>
+                </div>
             </div>
         </div>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </div>
 
     
     <header>
@@ -1435,7 +1607,40 @@
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
+<script>
+        // Premium Date and Time Display
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Update Date
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', dateOptions);
+            
+            // Update Time with leading zeros
+            document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
+        }
 
+        // Initialize and update every second
+        function initPremiumClock() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        }
+
+        // Smooth page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initPremiumClock();
+            
+            // Add subtle animation to social icons
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            socialIcons.forEach((icon, index) => {
+                icon.style.animation = `fadeIn 0.5s ease-out ${index * 0.1 + 0.6}s forwards`;
+                icon.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
     <script>
 // Get the elements
         document.addEventListener('DOMContentLoaded', function() {
