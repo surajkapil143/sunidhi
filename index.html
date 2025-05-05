@@ -846,6 +846,45 @@
                    
                </script>
             </div>
+ </style>
+</head>
+<body>
+    <!-- Top Header with Date and Social Icons -->
+    <div class="top-header">
+        <div class="date-container" id="currentDate">
+            <!-- Date will be inserted by JavaScript -->
+        </div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the main content of your website.</p>
+    </div>
+    
+    <script>
+        // Display current date
+        function updateDate() {
+            const dateElement = document.getElementById('currentDate');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date();
+            dateElement.textContent = today.toLocaleDateString('en-US', options);
+        }
+        
+        // Call the function when the page loads
+        window.onload = updateDate;
+        
+        // You can also update it periodically if needed
+        setInterval(updateDate, 86400000); // Update once per day
+    </script>
+</body>
 
     
     <header>
