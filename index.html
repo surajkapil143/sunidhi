@@ -1437,40 +1437,7 @@
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-<script>
-        // Premium Date and Time Display
-        function updateDateTime() {
-            const now = new Date();
-            
-            // Update Date
-            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', dateOptions);
-            
-            // Update Time with leading zeros
-            document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
-        }
 
-        // Initialize and update every second
-        function initPremiumClock() {
-            updateDateTime();
-            setInterval(updateDateTime, 1000);
-        }
-
-        // Smooth page load
-        document.addEventListener('DOMContentLoaded', function() {
-            initPremiumClock();
-            
-            // Add subtle animation to social icons
-            const socialIcons = document.querySelectorAll('.social-icons a');
-            socialIcons.forEach((icon, index) => {
-                icon.style.animation = `fadeIn 0.5s ease-out ${index * 0.1 + 0.6}s forwards`;
-                icon.style.opacity = '0';
-            });
-        });
-    </script>
-</body>
     <script>
 // Get the elements
         document.addEventListener('DOMContentLoaded', function() {
@@ -1553,6 +1520,40 @@
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
+            });
+        });
+    </script>
+        
+         <script>
+        // Premium Date and Time Display
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Update Date
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', dateOptions);
+            
+            // Update Time with leading zeros
+            document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
+        }
+
+        // Initialize and update every second
+        function initPremiumClock() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        }
+
+        // Smooth page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initPremiumClock();
+            
+            // Add subtle animation to social icons
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            socialIcons.forEach((icon, index) => {
+                icon.style.animation = `fadeIn 0.5s ease-out ${index * 0.1 + 0.6}s forwards`;
+                icon.style.opacity = '0';
             });
         });
     </script>
