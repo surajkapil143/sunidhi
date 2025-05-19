@@ -32,7 +32,117 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: popupEntrance 0.5s ease-out;
+        }
         
+        @keyframes popupEntrance {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .popup-title {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .popup-offer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .popup-list {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .popup-list li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .popup-list li:before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .contact-box {
+            background: #F8F0FB;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px dashed var(--secondary);
+        }
+        
+        .contact-number {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+        
+        .enroll-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .enroll-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 480px) {
+            .popup-content {
+                padding: 20px;
+            }
+            
+            .popup-title {
+                font-size: 20px;
+            }
+            
+            .contact-number {
+                font-size: 18px;
+            }
+        }
         /* Preloader */
         .preloader {
             position: fixed;
@@ -766,7 +876,7 @@
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 10px;
             height: 250px;
             cursor: pointer;
         }
@@ -1683,6 +1793,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- The rest of your website content would be here -->
+    
+    <!-- Course Offer Popup -->
+    <div class="popup-overlay" id="offerPopup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <h3 class="popup-title">Exclusive Makeup Course Offer!</h3>
+            <div class="popup-offer">
+                LIMITED TIME: 20% OFF ALL COURSES!
+            </div>
+            <p>Transform your passion into a profession with our certified makeup artist courses:</p>
+            <ul class="popup-list">
+                <li>Hands-on training with industry experts</li>
+                <li>International certification</li>
+                <li>Placement assistance</li>
+                <li>Complete makeup kit included</li>
+                <li>Flexible batch timings</li>
+            </ul>
+            <div class="contact-box">
+                <p>Call now to enroll or for more details:</p>
+                <div class="contact-number">
+                    <i class="fas fa-phone"></i> +91 62056 83994
+                </div>
+                <p>Offer valid for next 24 hours only</p>
+            </div>
+            <button class="enroll-btn" onclick="closePopup()">ENROLL NOW</button>
+        </div>
+    </div>
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader"></div>
@@ -2459,6 +2597,24 @@ Dhanbad, Jharkhand 828202</a>
                 preloader.style.display = 'none';
             }, 500);
         });
+
+          // Show popup after 5 seconds
+        setTimeout(function() {
+            document.getElementById('offerPopup').style.display = 'flex';
+        }, 5000);
+        
+        // Close popup function
+        function closePopup() {
+            document.getElementById('offerPopup').style.display = 'none';
+        }
+        
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('offerPopup');
+            if (event.target === popup) {
+                closePopup();
+            }
+        }
         
         // Mobile Menu Toggle
         const menuBtn = document.querySelector('.mobile-menu-btn');
