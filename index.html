@@ -2697,33 +2697,9 @@ Dhanbad, Jharkhand 828202</a>
                 if (emailInput.value) {
                     alert('Thank you for subscribing to our newsletter!');
                     emailInput.value = '';
-                            }
-            });
+                 }
         });
-         // Set active nav link based on scroll position
-        const sections = document.querySelectorAll('section');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navlinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Disable right-click and inspect element
+         // Disable right-click and inspect element
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
