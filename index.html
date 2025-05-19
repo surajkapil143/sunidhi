@@ -224,93 +224,82 @@
             margin-bottom: 20px;
             opacity: 0.9;
         }
-       /* Mobile Menu Button (Hidden by Default) */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #333; /* Changed to dark for better visibility */
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-/* Mobile Menu Panel */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%; /* Better width for mobile screens */
-    max-width: 300px; /* More compact */
-    height: 100vh;
-    background-color: #222; /* Darker for contrast */
-    padding: 70px 20px 30px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-.mobile-menu.active {
-    right: 0;
-}
-
-/* Close Button Inside Mobile Menu */
-.mobile-menu .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Mobile Menu List Styling */
-.mobile-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.mobile-menu li {
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem; /* Slightly smaller */
-    padding: 10px 0;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.mobile-menu a:hover {
-    color: gold; /* Changed to gold for better contrast */
-    padding-left: 10px;
-}
-
-/* Submenu (if needed) */
-.mobile-submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding-left: 15px;
-}
-
-.mobile-submenu.active {
-    max-height: 500px;
-}
-
-/* Media Query to Show Mobile Menu on Small Screens */
-@media (max-width: 768px) {
-    .desktop-menu {
-        display: none;
-    }
-    .mobile-menu-btn {
-        display: block;
-    }
+       /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 350px;
+            height: 100vh;
+            background-color: var(--dark);
+            padding: 80px 30px 30px;
+            transition: var(--transition);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--gold);
+            padding-left: 10px;
+        }
+        
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding-left: 20px;
+        }
+        
+        .mobile-submenu.active {
+            max-height: 500px;
+        }
+        
+        .menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .menu-toggle i {
+            transition: var(--transition);
+        }
+        
+        .menu-toggle.active i {
+            transform: rotate(180deg);
+        }
 }
         
         /* Hero Section */
