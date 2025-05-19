@@ -2700,9 +2700,30 @@ Dhanbad, Jharkhand 828202</a>
                             }
             });
         });
+         // Set active nav link based on scroll position
+        const sections = document.querySelectorAll('section');
         
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
                 
-                 // Disable right-click and inspect element
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navlinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Disable right-click and inspect element
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
@@ -2716,8 +2737,8 @@ Dhanbad, Jharkhand 828202</a>
             ) {
                 e.preventDefault();
             }
-            });
         });
+    });
     </script>
 </body>
 </html>
