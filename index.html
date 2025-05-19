@@ -92,18 +92,31 @@
          }
         
         .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--light);
         }
-        
-        .logo i {
-            color: var(--gold);
-            margin-right: 50px;
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--radius);
+            color: white;
+            font-size: 1.25rem;
+            transition: var(--transition);
         }
+
+        .logo:hover .logo-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
 
         .nav-links {
             display: flex;
@@ -1679,7 +1692,7 @@
     <header>
           <div class="logo">
         <a href="index.html">  <!-- Link to your homepage -->
-            <img src="Logo.png" alt="Sunidhi makeover & academy" width="250">  <!-- Adjust width as needed -->
+            <img src="Logo.png" alt="Sunidhi makeover & academy" width="300">  <!-- Adjust width as needed -->
         </a>
             
             <ul class="nav-links">
